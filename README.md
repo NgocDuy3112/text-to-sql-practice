@@ -14,7 +14,6 @@
 
 - `/db`: Chứa file `.sql` khởi tạo CSDL mẫu và file lưu trữ CSDL `.db` sau khi được khởi tạo.
 - `/implements`: Thư mục chứa các file nội dung thực hành cần triển khai.
-- `/implements_ref`: Thư mục chứa phần lập trình tham khảo tương ứng với từng nội dung thực hành.
 - `/shared`: Thư mục chứa các phần lập trình dùng chung được cài đặt sẵn.
 - `/test`: Thư mục chứa các file script để kiểm thử từng phần nội dung lập trình.
 - `app.py`: Script khởi chạy giao diện chatbot hoàn chỉnh khi đã hoàn thiện pipeline.

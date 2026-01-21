@@ -2,7 +2,7 @@ from enum import StrEnum
 from langchain_core.prompts import ChatPromptTemplate
 from shared.chat_model import llm_chat_base
 from shared.embed_model import embedding_base
-from shared.constants import IDENTITY_PROMPT, NON_QUERY_SAMPLES, QUERY_SAMPLES
+from shared.constants import *
 from shared.utils import get_cosine_sim
 
 from pydantic import BaseModel
@@ -57,23 +57,7 @@ def route_question(question: str) -> ROUTER_QUESTION:
     prompt_template = ChatPromptTemplate(
         [
             ("system", IDENTITY_PROMPT),
-            ("system", f"""
-                Bạn là một người điều phối luồng xử lý cho hệ thống chatbot hỗ trợ truy vấn dữ liệu. Dựa vào yêu cầu dưới đây từ người dùng, hãy phân định luồng xử lý tương ứng:
-                + {ROUTER_QUESTION.NON_QUERY} - Trả lời trực tiếp mà không truy vấn.
-                + {ROUTER_QUESTION.QUERY} - Truy vấn dữ liệu rồi trả lời.
-                
-                Chỉ dẫn phân định luồng:
-                - Sử dụng luồng {ROUTER_QUESTION.NON_QUERY} cho các dạng yêu cầu:
-                    + Chào hỏi xã giao.
-                    + Giao tiếp cơ bản.
-                    + Các câu hỏi không thuộc phạm vi chức năng hệ thống.
-                    + Các câu hỏi không yêu cầu truy xuất dữ liệu từ CSDL.
-                - Sử dụng luồng {ROUTER_QUESTION.QUERY} cho các câu hỏi cần truy vấn dữ liệu từ CSDL.
-
-                Chỉ dẫn kết quả trả về:
-                - Kết quả trả về của bạn chỉ trả về một trong: [{ROUTER_QUESTION.NON_QUERY}, {ROUTER_QUESTION.QUERY}].
-                - Không trả về kèm theo bất kỳ văn bản nào khác.
-            """),
+            ("system", ROUTER_INSTRUCTION),
             ("human", "{question}"),
         ],
         input_variables=["question"]

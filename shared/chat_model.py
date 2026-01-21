@@ -27,14 +27,12 @@ class LLMChatBase():
             model=model_id, 
             model_provider=model_provider,
             configurable_fields={
-                "max_tokens": 1,
                 "temperature": 0.1,
                 "keep_alive": 3,
                 "num_predict": 10
             }
         )
 
-    
     def _to_langchain_msg(self, message: ChatbotMessage) -> BaseMessage:
         assert "type" in message.keys() and "content" in message.keys(), "Đối tượng message mong đợi khóa type và content."
         
@@ -45,7 +43,7 @@ class LLMChatBase():
                 return AIMessage(message['content'])
             case _:
                 return HumanMessage(message['content'])
-    
+
     def _to_langchain_prompt(self, prompt: str | list[str] | ChatbotMessage | list[ChatbotMessage] | BaseMessage | list[BaseMessage]) -> list[BaseMessage]:
         # If caller already supplies LangChain messages, respect them.
         if isinstance(prompt, BaseMessage):
@@ -75,7 +73,7 @@ class LLMChatBase():
         # ==== Uncomment để log toàn bộ prompt gửi đến LLM ====
         
         return msg
-    
+
     def generate(self, prompt: str|list[str]|ChatbotMessage|list[ChatbotMessage]) -> str:
         """
         Gọi tạo sinh LLM với prompt đầu vào.
@@ -99,7 +97,7 @@ class LLMChatBase():
         # ==== Uncomment để log toàn bộ kết quả LLM trả về ====
         
         return content
-    
+
     def generate_structured(
         self, prompt: str|list[str]|ChatbotMessage|list[ChatbotMessage],
         base_model_cls: BaseModel
@@ -125,4 +123,4 @@ class LLMChatBase():
         return parsed
 
 
-llm_chat_base = LLMChatBase(model_id="gemma3:1b", model_provider="ollama") 
+llm_chat_base = LLMChatBase(model_id="qwen3:4b", model_provider="ollama") 

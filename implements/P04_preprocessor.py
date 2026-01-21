@@ -46,7 +46,7 @@ def preprocess_question(question: str, chat_history: list[ChatbotMessage] = []) 
     processed_question = llm_chat_base.generate(messages)
 
     # ====== Hết phần cài đặt ======
-    
+
     assert isinstance(processed_question, str), "Kết quả trả về phải là str"
-    
+
     return processed_question

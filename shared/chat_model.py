@@ -8,12 +8,12 @@ from langchain_core.messages import (
     AIMessage,
 )
 from pydantic import BaseModel
-from messages import MESSAGE_TYPE, ChatbotMessage
-from constants import IDENTITY_PROMPT
+from .messages import MESSAGE_TYPE, ChatbotMessage
+from .constants import IDENTITY_PROMPT
 
 
 class LLMChatBase():
-    def __init__(self, model_id: str = "qwen3:1.7b", model_provider: str = "ollama"):
+    def __init__(self, model_id: str = "gemma3:1b", model_provider: str = "ollama"):
         self.model_id = model_id
         self.model: BaseChatModel = init_chat_model(
             model=model_id, 
@@ -115,4 +115,4 @@ class LLMChatBase():
         return parsed
 
 
-llm_chat_base = LLMChatBase(model_id="qwen3:4b", model_provider="ollama") 
+llm_chat_base = LLMChatBase(model_id="qwen3:0.6b", model_provider="ollama") 

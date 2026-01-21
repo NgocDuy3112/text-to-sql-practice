@@ -22,7 +22,7 @@ def preprocess_question(question: str, chat_history: list[dict] = []) -> str:
     
     # ====== TODO: Thực hiện cài đặt dưới đây ======
     # Nếu không có lịch sử chat, trả về câu hỏi gốc
-    if not chat_history or len(chat_history) == 0:
+    if not chat_history:
         processed_question = question
     else:
         # Xây dựng chuỗi lịch sử chat

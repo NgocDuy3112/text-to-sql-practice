@@ -1,0 +1,7 @@
+generate_sql: |
+  Đây là chỉ dẫn tạo sinh truy vấn SQL.
+  Đây là cách dòng.
+
+generate_answer: |
+  Đây là chỉ dẫn tạo sinh câu trả lời.
+  Đây là cách dòng.

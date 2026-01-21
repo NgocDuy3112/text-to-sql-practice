@@ -1,0 +1,22 @@
+[project]
+name = "practice"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel~=7.1.0",
+    "langchain~=1.2.4",
+    "langchain-core~=1.2.7",
+    "langchain-huggingface~=1.2.0",
+    "langchain-ollama~=1.0.1",
+    "numpy~=2.4.1",
+    "pydantic~=2.12.5",
+    "pyyaml~=6.0.3",
+    "sentence-transformers>=5.2.0",
+    "streamlit~=1.53.0",
+]
+
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

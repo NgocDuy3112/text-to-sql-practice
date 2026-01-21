@@ -1,0 +1,25 @@
+from implements import ROUTER_QUESTION
+
+ROUTER_DATA = [
+    {"question": "Xin chào", "expected": ROUTER_QUESTION.NON_QUERY},
+    {"question": "Hi", "expected": ROUTER_QUESTION.NON_QUERY},
+    {"question": "Bạn là ai", "expected": ROUTER_QUESTION.NON_QUERY},
+    {"question": "Chatbot này dùng dữ liệu gì", "expected": ROUTER_QUESTION.NON_QUERY},
+    {"question": "Bạn có thể làm những gì", "expected": ROUTER_QUESTION.NON_QUERY},
+    {"question": "Hướng dẫn tôi cách đặt câu hỏi", "expected": ROUTER_QUESTION.NON_QUERY},
+    {"question": "Chào bạn, tôi cần hỗ trợ.", "expected": ROUTER_QUESTION.NON_QUERY},
+    {"question": "Bạn có thể giúp gì cho tôi?", "expected": ROUTER_QUESTION.NON_QUERY},
+    {"question": "Bạn có thể giúp tôi truy vấn những thông tin nào?", "expected": ROUTER_QUESTION.NON_QUERY},
+    {"question": "Tôi có thể yêu cầu bạn làm gì?", "expected": ROUTER_QUESTION.NON_QUERY},
+    {"question": "Lập danh sách các dữ liệu tôi truy vấn được?", "expected": ROUTER_QUESTION.NON_QUERY},
+    {"question": "Hiện có bao nhiêu học viên", "expected": ROUTER_QUESTION.QUERY},
+    {"question": "Danh sách các chương trình học hiện có", "expected": ROUTER_QUESTION.QUERY},
+    {"question": "Mỗi chương trình có học phí bao nhiêu", "expected": ROUTER_QUESTION.QUERY},
+    {"question": "Có bao nhiêu lớp học đang mở", "expected": ROUTER_QUESTION.QUERY},
+    {"question": "Những lớp nào đang diễn ra trong tháng 3", "expected": ROUTER_QUESTION.QUERY},
+    {"question": "Tổng số giảng viên hiện tại là bao nhiêu?", "expected": ROUTER_QUESTION.QUERY},
+    {"question": "Liệt kê các khóa học đang mở?", "expected": ROUTER_QUESTION.QUERY},
+    {"question": "Học phí của lớp lập trình cơ bản là bao nhiêu?", "expected": ROUTER_QUESTION.QUERY},
+    {"question": "Hiện tại có bao nhiêu lớp đang tạm dừng?", "expected": ROUTER_QUESTION.QUERY},
+    {"question": "Những lớp lập trình cơ bản khi nào mở tiếp?", "expected": ROUTER_QUESTION.QUERY},
+]

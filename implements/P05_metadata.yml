@@ -1,0 +1,27 @@
+_ten_bang_1:
+  description: |
+    Đây là mô tả bảng.
+    Đây là cách dòng.
+  
+  columns:
+    - _ten_cot_1: |
+        Đây là mô tả cột.
+        Đây là cách dòng.
+    
+    - _ten_cot_2: |
+        Đây là mô tả cột.
+        Đây là cách dòng.
+
+_ten_bang_2:
+  description: |
+    Đây là mô tả bảng.
+    Đây là cách dòng.
+  
+  columns:
+    - _ten_cot_1: |
+        Đây là mô tả cột.
+        Đây là cách dòng.
+    
+    - _ten_cot_2: |
+        Đây là mô tả cột.
+        Đây là cách dòng.

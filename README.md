@@ -4,6 +4,7 @@
 
 - Python >= 3.12
 - Ollama
+- Huggingface
 
 ## Mô hình sử dụng trong demo
 

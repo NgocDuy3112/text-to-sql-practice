@@ -45,12 +45,12 @@ def route_question(question: str) -> ROUTER_QUESTION:
     
     ## Routing using cosine similarity with sample questions
     # print("Sử dụng phương pháp cosine similarity để phân định luồng...")
-    # cos_sim_tables = get_cosine_sim(question, NON_QUERY_SAMPLES + QUERY_SAMPLES)
-    # similar_content = cos_sim_tables[0]['content']
-    # if similar_content in NON_QUERY_SAMPLES:
-    #     response = RouteSchema(route=ROUTER_QUESTION.NON_QUERY)
+    # query_cos_sim_tables = get_cosine_sim(question, QUERY_SAMPLES)
+    # non_query_cos_sim_tables = get_cosine_sim(question, NON_QUERY_SAMPLES)
+    # if max(non_query_cos_sim_tables) >= max(query_cos_sim_tables):
+    #     return ROUTER_QUESTION.NON_QUERY
     # else:
-    #     response = RouteSchema(route=ROUTER_QUESTION.QUERY)
+    #     return ROUTER_QUESTION.QUERY
 
     ## Routing using LLM classification
     print("Sử dụng LLM để phân định luồng...")

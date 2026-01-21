@@ -1,3 +1,5 @@
+from langchain_core.prompts import ChatPromptTemplate
+
 def preprocess_question(question: str, chat_history: list[dict] = []) -> str:
     """
     Chuẩn hóa câu hỏi người dùng.
@@ -17,7 +19,11 @@ def preprocess_question(question: str, chat_history: list[dict] = []) -> str:
     
     
     # ====== TODO: Thực hiện cài đặt dưới đây ======
-    
+    prompt_template = ChatPromptTemplate(
+        [
+            
+        ]
+    )
     
     
     # ====== Hết phần cài đặt ======

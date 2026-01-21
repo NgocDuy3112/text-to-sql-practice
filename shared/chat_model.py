@@ -8,16 +8,8 @@ from langchain_core.messages import (
     AIMessage,
 )
 from pydantic import BaseModel
-from .messages import MESSAGE_TYPE, ChatbotMessage
-
-
-# Đọc prompt identity từ file
-with open(os.path.join(os.path.dirname(__file__), "identity_prompt.yml")) as stream:
-    try:
-        IDENTITY_PROMPT = yaml.safe_load(stream)['chatbot_identity']
-    except Exception as e:
-        print(f"Lỗi đọc prompt identity: {e}. Identity prompt được mặc định về chuỗi trỗng.")
-        IDENTITY_PROMPT = ""
+from messages import MESSAGE_TYPE, ChatbotMessage
+from constants import IDENTITY_PROMPT
 
 
 class LLMChatBase():

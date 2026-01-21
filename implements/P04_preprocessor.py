@@ -32,7 +32,6 @@ def preprocess_question(question: str, chat_history: list[ChatbotMessage] = []) 
 
     prompt_template = ChatPromptTemplate(
         [
-            ("system", IDENTITY_PROMPT),
             ("system", PREPROCESS_SYSTEM_INSTRUCTION),
             ("human", """
                 **Dữ liệu đầu vào:**

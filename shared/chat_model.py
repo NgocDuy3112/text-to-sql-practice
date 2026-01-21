@@ -125,4 +125,4 @@ class LLMChatBase():
         return parsed
 
 
-llm_chat_base = LLMChatBase()
+llm_chat_base = LLMChatBase(model_id="gemma3:1b", model_provider="ollama") 

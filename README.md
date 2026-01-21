@@ -1,18 +1,14 @@
 # Thực hành chatbot
 
-> Hiện nội dung thực hành được chuẩn bị đến phần **P03: Router - Phân định luồng xử lý**.
-
 ## Yêu cầu
 
-- Python >= 3.10
+- Python >= 3.12
 - Ollama
 
-## Mô hình Ollama sử dụng trong demo
+## Mô hình sử dụng trong demo
 
-Chạy lệnh `ollama pull model-id` với các model ID bên dưới:
-
-- gemma3:1b
-- bge-m3
+- Mô hình Ollama: `qwen3:1.7b`, `gemma3:1b`.
+- Mô hình Huggingface: `AITeamVN/Vietnamese_Embedding`
 
 ## Cấu trúc thư mục
 
@@ -25,16 +21,18 @@ Chạy lệnh `ollama pull model-id` với các model ID bên dưới:
 - `setup_db.py`: Script khởi chạy CSDL mẫu.
 - `mo-ta-thuc-hanh.png`: Ảnh mô tả pipeline vận hành của chatbot và các nội dung thực hành đơn lập. Các nội dung *xanh lá* là các nội dung *lập trình*, các nội dung *màu vàng* là các nội dung *prompt engineering*.
 
-## Cài đặt thực hành
+## Cài đặt thực hành (trên Linux/MacOS)
 
-### 1. Tạo môi trường ảo python venv
+### 1. Tạo môi trường ảo python venv qua uv 
 
 ```bash
-# Khởi tạo môi trường ảo
-python -m venv .venv
+uv python pin 3.12
 
-# Truy cập vào môi trường ảo
-.venv/Scripts/Activate.ps1
+uv init .
+
+uv venv .venv
+
+source .venv/bin/activate
 
 # Để thoát môi trường ảo, chạy lệnh
 # deactivate
@@ -43,7 +41,7 @@ python -m venv .venv
 ### 2. Cài đặt thư viện
 
 ```bash
-pip install -r requirements.txt
+uv add -r requirements.txt
 ```
 
 ### 3. Khởi tạo CSDL mẫu

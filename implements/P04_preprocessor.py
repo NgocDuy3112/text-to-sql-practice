@@ -2,7 +2,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from shared.chat_model import llm_chat_base
 from shared.constants import IDENTITY_PROMPT
 
-def preprocess_question(question: str, chat_history: list[dict] = []) -> str:
+def preprocess_question(question: str, chat_history: list[dict] | None = None) -> str:
     """
     Chuẩn hóa câu hỏi người dùng.
     
@@ -16,6 +16,9 @@ def preprocess_question(question: str, chat_history: list[dict] = []) -> str:
     :return: Câu hỏi đã được chuẩn hóa.
     :rtype: str
     """
+    
+    if chat_history is None:
+        chat_history = []
     
     processed_question = None
     

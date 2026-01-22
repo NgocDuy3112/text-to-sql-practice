@@ -27,7 +27,7 @@ hoc_vien:
 
 chuong_trinh:
   description: >
-    Bảng này dùng để lưu các thông tin về chương trình đào tạo, bao gồm: id, ten, tong_so_gio, hoc_phi, ghi_chu. Bảng này dùng để cung cấp thông tin chi tiết về các chương trình đào tạo.
+    Bảng này dùng để lưu các thông tin về chương trình đào tạo, bao gồm: id, ten, tong_so_gio, hoc_phi, ghi_chu. Bảng này chỉ dùng để cung cấp thông tin chi tiết về các chương trình đào tạo.
   columns:
     - name: id
       description: >
@@ -54,7 +54,7 @@ chuong_trinh:
 
 lop_hoc:
   description: >
-    Bảng này dùng để lưu các thông tin về lớp học, bao gồm: id, ten_lop, chuong_trinh_id, thoi_gian_hoc, dia_diem_hoc, ngay_bat_dau, ngay_ket_thuc. Bảng này chỉ được dùng để cung cấp thông tin chi tiết về lớp học. Bảng này có mối liên hệ với bảng chuong_trinh thông qua khoá ngoại.
+    Bảng này dùng để lưu các thông tin về lớp học, bao gồm: id, ten_lop, chuong_trinh_id, thoi_gian_hoc, dia_diem_hoc, ngay_bat_dau, ngay_ket_thuc. Bảng này chỉ được dùng để cung cấp thông tin chi tiết về lớp học. Nếu sử dụng bảng này, HÃY đính kèm thêm bảng chuong_trinh để có thông tin đầy đủ về chương trình đào tạo tương ứng.
   columns:
     - name: id
       description: >
@@ -114,7 +114,7 @@ giang_vien:
 
 dang_ky_lop:
   description: >
-    Bảng này dùng để lưu các thông tin về đăng ký lớp học của học viên, bao gồm: id, hoc_vien_id, lop_hoc_id, trang_thai. Bảng này dùng để theo dõi trạng thái đăng ký của học viên cho các lớp học khác nhau. Bảng này có mối liên hệ với bảng hoc_vien và lop_hoc thông qua các khoá ngoại.
+    Bảng này dùng để lưu các thông tin về đăng ký lớp học của học viên, bao gồm: id, hoc_vien_id, lop_hoc_id, trang_thai. Bảng này dùng để theo dõi trạng thái đăng ký của học viên cho các lớp học khác nhau. Nếu sử dụng bảng này, HÃY đính kèm một torng hai bảng hoc_vien và lop_hoc để có thông tin đầy đủ về học viên và lớp học tương ứng.
   columns:
     - name: id
       description: >
@@ -139,7 +139,7 @@ dang_ky_lop:
 
 giang_vien_phu_trach:
   description: >
-    Bảng này dùng để lưu các thông tin về giảng viên phụ trách lớp học, bao gồm: id, giang_vien_id, lop_hoc_id, vai_tro. Bảng này dùng để xác định giảng viên nào phụ trách giảng dạy cho lớp học cụ thể. Bảng này có mối liên hệ với bảng giang_vien và lop_hoc thông qua các khoá ngoại.
+    Bảng này dùng để lưu các thông tin về giảng viên phụ trách lớp học, bao gồm: id, giang_vien_id, lop_hoc_id, vai_tro. Bảng này dùng để xác định giảng viên nào phụ trách giảng dạy cho lớp học cụ thể. Nếu sử dụng bảng này, HÃY đính kèm một trong hai bảng giang_vien và lop_hoc để có thông tin đầy đủ về giảng viên và lớp học tương ứng.
   columns:
     - name: id
       description: >
@@ -164,7 +164,7 @@ giang_vien_phu_trach:
 
 diem_cuoi_khoa:
   description: >
-    Bảng này dùng để lưu các thông tin về điểm cuối khóa của học viên, bao gồm: id, hoc_vien_id, lop_hoc_id, diem. Bảng này được dùng để tra cứu điểm cuối khóa của học viên cho các lớp học khác nhau. Bảng này có mối liên hệ với bảng hoc_vien và lop_hoc thông qua các khoá ngoại.
+    Bảng này dùng để lưu các thông tin về điểm cuối khóa của học viên, bao gồm: id, hoc_vien_id, lop_hoc_id, diem. Bảng này được dùng để tra cứu điểm cuối khóa của học viên cho các lớp học khác nhau. Nếu sử dụng bảng này, HÃY đính kèm một trong hai bảng hoc_vien và lop_hoc để có thông tin đầy đủ về học viên và lớp học tương ứng.
   columns:
     - name: id
       description: >

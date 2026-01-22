@@ -1,7 +1,6 @@
-# from langchain_ollama import OllamaEmbeddings
-# from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.embeddings import init_embeddings
 import numpy as np
+from .constants import EMBEDDING_MODEL_ID, EMBEDDING_MODEL_PROVIDER
 
 
 class EmbeddingBase():
@@ -104,4 +103,4 @@ class EmbeddingBase():
 
 
 # ollama_embedding_base = OllamaEmbeddingBase()
-embedding_base = EmbeddingBase(model="AITeamVN/Vietnamese_Embedding", provider="huggingface") 
+embedding_base = EmbeddingBase(model=EMBEDDING_MODEL_ID, provider=EMBEDDING_MODEL_PROVIDER) 

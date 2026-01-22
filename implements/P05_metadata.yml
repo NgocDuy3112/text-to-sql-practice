@@ -1,27 +1,188 @@
-_ten_bang_1:
-  description: |
-    Đây là mô tả bảng.
-    Đây là cách dòng.
-  
+hoc_vien:
+  description: >
+    Bảng này dùng để lưu các thông tin về học viên, bao gồm: id, ten, nam_sinh, so_dien_thoai, email. Bảng này chỉ cung cấp thông tin cá nhân về học viên.
   columns:
-    - _ten_cot_1: |
-        Đây là mô tả cột.
-        Đây là cách dòng.
-    
-    - _ten_cot_2: |
-        Đây là mô tả cột.
-        Đây là cách dòng.
+    - name: id
+      description: >
+        Mô tả: Mã định danh duy nhất của học viên.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Là khoá chính của bảng.
+    - name: ten
+      description: >
+        Mô tả: Tên học viên.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Không được để trống.
+    - name: nam_sinh
+      description: >
+        Mô tả: Năm sinh của học viên.
+        Kiểu dữ liệu: Số nguyên.
+    - name: so_dien_thoai
+      description: >
+        Mô tả: Số điện thoại liên lạc của học viên.
+        Kiểu dữ liệu: Chuỗi.
+    - name: email
+      description: >
+        Mô tả: Địa chỉ email của học viên.
+        Kiểu dữ liệu: Chuỗi.
 
-_ten_bang_2:
-  description: |
-    Đây là mô tả bảng.
-    Đây là cách dòng.
-  
+chuong_trinh:
+  description: >
+    Bảng này dùng để lưu các thông tin về chương trình đào tạo, bao gồm: id, ten, tong_so_gio, hoc_phi, ghi_chu. Bảng này dùng để cung cấp thông tin chi tiết về các chương trình đào tạo.
   columns:
-    - _ten_cot_1: |
-        Đây là mô tả cột.
-        Đây là cách dòng.
-    
-    - _ten_cot_2: |
-        Đây là mô tả cột.
-        Đây là cách dòng.
+    - name: id
+      description: >
+        Mô tả: Mã định danh duy nhất của chương trình.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Là khoá chính của bảng.
+    - name: ten
+      description: >
+        Mô tả: Tên chương trình đào tạo.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Không được để trống.
+    - name: tong_so_gio
+      description: >
+        Mô tả: Tổng số giờ học của chương trình.
+        Kiểu dữ liệu: Số nguyên.
+    - name: hoc_phi
+      description: >
+        Mô tả: Học phí của chương trình đào tạo.
+        Kiểu dữ liệu: Số nguyên.
+    - name: ghi_chu
+      description: >
+        Mô tả: Ghi chú thêm về chương trình đào tạo.
+        Kiểu dữ liệu: Chuỗi.
+
+lop_hoc:
+  description: >
+    Bảng này dùng để lưu các thông tin về lớp học, bao gồm: id, ten_lop, chuong_trinh_id, thoi_gian_hoc, dia_diem_hoc, ngay_bat_dau, ngay_ket_thuc. Bảng này chỉ được dùng để cung cấp thông tin chi tiết về lớp học. Bảng này có mối liên hệ với bảng chuong_trinh thông qua khoá ngoại.
+  columns:
+    - name: id
+      description: >
+        Mô tả: Mã định danh duy nhất của lớp học.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Là khoá chính của bảng.
+    - name: ten_lop
+      description: >
+        Mô tả: Tên của lớp học.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Không được để trống.
+    - name: chuong_trinh_id
+      description: >
+        Mô tả: Mã định danh của chương trình đào tạo mà lớp học này thuộc về.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Là khoá ngoại tham chiếu đến cột id trong bảng chuong_trinh.
+    - name: thoi_gian_hoc
+      description: >
+        Mô tả: Thời gian học của lớp học.
+        Kiểu dữ liệu: Chuỗi.
+    - name: dia_diem_hoc
+      description: >
+        Mô tả: Địa điểm học.
+        Kiểu dữ liệu: Chuỗi.
+    - name: thoi_gian_bat_dau
+      description: >
+        Mô tả: Thời gian bắt đầu của lớp học.
+        Kiểu dữ liệu: Kiểu ngày tháng.
+    - name: thoi_gian_ket_thuc
+      description: >
+        Mô tả: Thời gian kết thúc của lớp học.
+        Kiểu dữ liệu: Kiểu ngày tháng.
+
+
+giang_vien:
+  description: >
+    Bảng này dùng để lưu các thông tin về giảng viên, bao gồm: id, ten, so_dien_thoai, email. Bảng này chỉ cung cấp thông tin cá nhân về giảng viên.
+  columns:
+    - name: id
+      description: >
+        Mô tả: Mã định danh duy nhất của giảng viên.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Là khoá chính của bảng.
+    - name: ten
+      description: >
+        Mô tả: Tên giảng viên.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Không được để trống.
+    - name: so_dien_thoai
+      description: >
+        Mô tả: Số điện thoại liên lạc của giảng viên.
+        Kiểu dữ liệu: Chuỗi.
+    - name: email
+      description: >
+        Mô tả: Địa chỉ email của giảng viên.
+        Kiểu dữ liệu: Chuỗi.
+
+dang_ky_lop:
+  description: >
+    Bảng này dùng để lưu các thông tin về đăng ký lớp học của học viên, bao gồm: id, hoc_vien_id, lop_hoc_id, trang_thai. Bảng này dùng để theo dõi trạng thái đăng ký của học viên cho các lớp học khác nhau. Bảng này có mối liên hệ với bảng hoc_vien và lop_hoc thông qua các khoá ngoại.
+  columns:
+    - name: id
+      description: >
+        Mô tả: Mã định danh duy nhất của đăng ký lớp học.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Là khoá chính của bảng.
+    - name: hoc_vien_id
+      description: >
+        Mô tả: Mã định danh của học viên đăng ký lớp học.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Là khoá ngoại tham chiếu đến cột id trong bảng hoc_vien.
+    - name: lop_hoc_id
+      description: >
+        Mô tả: Mã định danh của lớp học mà học viên đăng ký.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Là khoá ngoại tham chiếu đến cột id trong bảng lop_hoc.
+    - name: trang_thai
+      description: >
+        Mô tả: Trạng thái đăng ký.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Chỉ thuộc một trong các giá trị hợp lệ: 'dang_hoc', 'hoan_tat', 'huy'.
+
+giang_vien_phu_trach:
+  description: >
+    Bảng này dùng để lưu các thông tin về giảng viên phụ trách lớp học, bao gồm: id, giang_vien_id, lop_hoc_id, vai_tro. Bảng này dùng để xác định giảng viên nào phụ trách giảng dạy cho lớp học cụ thể. Bảng này có mối liên hệ với bảng giang_vien và lop_hoc thông qua các khoá ngoại.
+  columns:
+    - name: id
+      description: >
+        Mô tả: Mã định danh duy nhất của giảng viên phụ trách.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Là khoá chính của bảng.
+    - name: giang_vien_id
+      description: >
+        Mô tả: Mã định danh của giảng viên phụ trách lớp học.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Là khoá ngoại tham chiếu đến cột id trong bảng giang_vien.
+    - name: lop_hoc_id
+      description: >
+        Mô tả: Mã định danh của lớp học mà giảng viên phụ trách.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Là khoá ngoại tham chiếu đến cột id trong bảng lop_hoc.
+    - name: vai_tro
+      description: >
+        Mô tả: Vai trò của giảng viên trong lớp học 
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Chỉ thuộc một trong các giá trị hợp lệ: 'giang_day_chinh', 'tro_giang', 'thuc_hanh'.
+
+diem_cuoi_khoa:
+  description: >
+    Bảng này dùng để lưu các thông tin về điểm cuối khóa của học viên, bao gồm: id, hoc_vien_id, lop_hoc_id, diem. Bảng này được dùng để tra cứu điểm cuối khóa của học viên cho các lớp học khác nhau. Bảng này có mối liên hệ với bảng hoc_vien và lop_hoc thông qua các khoá ngoại.
+  columns:
+    - name: id
+      description: >
+        Mô tả: Mã định danh duy nhất của điểm cuối khóa.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Là khoá chính của bảng.
+    - name: hoc_vien_id
+      description: >
+        Mô tả: Mã định danh của học viên.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Là khoá ngoại tham chiếu đến cột id trong bảng hoc_vien.
+    - name: lop_hoc_id
+      description: >
+        Mô tả: Mã định danh của lớp học.
+        Kiểu dữ liệu: Chuỗi.
+        Ràng buộc: Là khoá ngoại tham chiếu đến cột id trong bảng lop_hoc.
+    - name: diem
+      description: >
+        Mô tả: Điểm cuối khóa của học viên.
+        Kiểu dữ liệu: Số thực.
+        Ràng buộc: Có dạng là số thập phân với hai chữ số sau dấu phẩy, có bốn chữ số trước dấu phẩy. Ví dụ: 9999.99; 0.00; 1234.56.

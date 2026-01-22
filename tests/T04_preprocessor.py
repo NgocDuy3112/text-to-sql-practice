@@ -9,6 +9,7 @@ import json
 from implements.P04_preprocessor import preprocess_question
 from tests.test_data import PREPROCESSOR_DATA
 from shared.messages import ChatbotMessage
+from shared.constants import MODEL_ID, MODEL_PROVIDER
 
 
 def _process_data(data: dict):    
@@ -41,6 +42,7 @@ def main():
             }
         )
 
+    print(f"\n>> LLM được sử dụng: {MODEL_PROVIDER} - {MODEL_ID}")
     print("\n>>> Thành phần cho kết quả <<<")
     for o in output:
         hist_str = json.dumps(o['chat_history'], ensure_ascii=False)

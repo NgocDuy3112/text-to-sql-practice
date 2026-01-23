@@ -1,8 +1,8 @@
 """
 Tester cho phần thực hành 05 - Truy vấn tương đồng mô tả bảng.
 Chạy tester:
-  + Tại thư mục dự án.
-  + Chạy lệnh `python -m tests.T05_context_retriever`.
+    + Tại thư mục dự án.
+    + Chạy lệnh `python -m tests.T05_context_retriever`.
 """
 
 from implements.P05_context_retriever import retrieve_context

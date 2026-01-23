@@ -11,6 +11,7 @@ class MESSAGE_TYPE(Enum):
 class ChatbotMessage(BaseModel):
     type: MESSAGE_TYPE = Field(description="Loại tin nhắn: người dùng, hệ thống, trợ lý.")
     content: str = Field(description="Nội dung tin nhắn.")
+    debug: dict = Field(default_factory=dict, description="Thông tin debug bổ sung.")
         
     @classmethod
     def from_data(cls, data: dict) -> "ChatbotMessage":

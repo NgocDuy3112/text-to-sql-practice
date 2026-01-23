@@ -12,6 +12,10 @@ DROP TABLE IF EXISTS hoc_vien;
 DROP TABLE IF EXISTS giang_vien;
 DROP TABLE IF EXISTS chuong_trinh;
 
+DROP TABLE IF EXISTS conversations;
+
+DROP TABLE IF EXISTS chat_history;
+
 -- =========================
 -- TABLE: hoc_vien
 -- =========================
